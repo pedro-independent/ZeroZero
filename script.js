@@ -1,32 +1,35 @@
 // gsap.registerPlugin(ScrollTrigger);
 
-// const createScroll01 = () => {
-//   const panels = Array.from(document.querySelectorAll('.section-panel'));
+// let colorWhite = "var(--white-smoke)";
+// let colorBlack = "var(--black)";
+// let colorTransparent = "var(transparent)";
 
-//   panels.forEach((panel, index) => {
-//     const isLast = index === panels.length - 1;
-
-//     gsap
+// /* Navbar Color Change */  
+// function initNavbarAnimations() {
+//     gsap.set(".navbar_component", {
+//       backgroundColor: colorTransparent,
+//     });
+  
+//     gsap.set(".navbar-wrapper", {
+//         color: colorWhite,
+//       });
+  
+//     let tlNav = gsap
 //       .timeline({
 //         scrollTrigger: {
-//           trigger: panel,
-//           start: 'top top',
-//           scrub: 1,
+//           trigger: ".is-sobre-nos",
+//           start: "center top",
+//           end: "80% top",
+//           scrub: true,
+//           markers: true,
 //         },
 //       })
-//       // Animate panel
-//       .to(
-//         panel,
+//       .to(".navbar_component", {
+//         backgroundColor: colorWhite,
+//       })
+//       .to(".navbar-wrapper",
 //         {
-//           ease: 'none',
-//           startAt: { filter: 'brightness(100%) contrast(100%)' },
-//           filter: isLast ? 'none' : 'brightness(50%) contrast(135%)',
+//           color: colorBlack,
 //         },
-//         '<'
-//       )
-//   });
-// };
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   createScroll01();
-// });
+//       )    
+//   }
